@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spring Flowers School</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid d-flex justify-content-between">
+      <a class="navbar-brand" href="#">Spring Flowers School</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+              data-bs-target="#navbarNav" aria-controls="navbarNav" 
+              aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" id="homeBtn">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" id="timeTableBtn">TimeTable</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Home Section -->
+  <div id="homeSection" class="container mt-4">
+    <h1>Welcome to Spring Flowers School Student Portal</h1>
+    <p>This is your dashboard where you can find all the important updates and information.</p>
+  </div>
+
+  <!-- TimeTable Section -->
+  <div id="timeTableSection" class="container mt-4" style="display:none;">
+    <h2 class="mb-3">My Time Table</h2>
+    <div class="table-responsive">
+      <table class="table table-bordered table-striped text-center">
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>9:00 - 10:00</th>
+            <th>10:00 - 11:00</th>
+            <th>11:00 - 12:00</th>
+            <th>12:00 - 1:00</th>
+            <th>1:00 - 2:00</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monday</td>
+            <td>Math</td>
+            <td>English</td>
+            <td>Science</td>
+            <td>Lunch Break</td>
+            <td>Tamil</td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td>Tamil</td>
+            <td>Computer Science</td>
+            <td>Math</td>
+            <td>Lunch Break</td>
+            <td>English</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>Science</td>
+            <td>Math</td>
+            <td>English</td>
+            <td>Lunch Break</td>
+            <td>Tamil</td>
+          </tr>
+          <tr>
+            <td>Thursday</td>
+            <td>History</td>
+            <td>Tamil</td>
+            <td>Computer Science</td>
+            <td>Lunch Break</td>
+            <td>Math</td>
+          </tr>
+          <tr>
+            <td>Friday</td>
+            <td>English</td>
+            <td>Science</td>
+            <td>History</td>
+            <td>Lunch Break</td>
+            <td>Tamil</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

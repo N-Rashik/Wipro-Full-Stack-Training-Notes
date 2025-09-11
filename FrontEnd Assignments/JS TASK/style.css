@@ -1,0 +1,126 @@
+body {
+  background: #f1f5f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c3e50;
+  max-width: 700px;
+  margin: 20px auto;
+  padding: 0 15px 40px;
+}
+
+h1 {
+  text-align: center;
+  color: #1f2937;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+#itemForm {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.5);
+  margin-bottom: 80px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+input, textarea, select, button {
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  box-sizing: border-box;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: #3b82f6;
+  outline: none;
+  box-shadow: 0 0 6px rgba(59,130,246,0.5);
+}
+
+button {
+  background: linear-gradient(45deg, #4f46e5, #3b82f6);
+  border: none;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background: linear-gradient(45deg, #3b82f6, #2563eb);
+}
+
+.menu-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+}
+
+.menu-item:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+  transform: translateY(-3px);
+  transition: all 0.2s ease;
+}
+
+.menu-item strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.menu-item small {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.btn-group {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.btn-group button {
+  flex: 1;
+  padding: 8px 0;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.edit-btn {
+  background: #3b82f6;  
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease;
+}
+
+.edit-btn:hover {
+  background: #2563eb;  
+}
+
+.delete-btn {
+  background: #f87171;  
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #ef4444;  
+}
