@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple ToDo, Timer & Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  Time: <span id="timer">--:--:--</span>
+</header>
+
+<section>
+  <h3>ToDo List</h3>
+  <input id="taskInput" placeholder="New task" />
+  <button id="addBtn">Add Task</button>
+  <button id="removeBtn">Remove Last</button>
+  <button id="showBtn">Show Tasks</button>
+  <ul id="taskList"></ul>
+</section>
+
+<section>
+  <h3>Calculator</h3>
+  <input id="num1" type="number" placeholder="Num 1" />
+  <input id="num2" type="number" placeholder="Num 2" />
+  <select id="operation">
+    <option>+</option>
+    <option>-</option>
+    <option>*</option>
+  </select>
+  <button id="calcBtn">Calculate</button>
+  <div>Result: <span id="result"></span></div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

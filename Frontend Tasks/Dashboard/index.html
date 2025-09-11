@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Banner</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-image: url('C://Users//RASHIK//Downloads//istockphoto-517188688-1024x1024.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      position: relative;
+      color: white;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      padding: 20px 40px;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    .navbar ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .navbar a:hover {
+      color: #00ffff;
+    }
+
+    .banner {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+
+    .banner h1 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      border: 2px solid white;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background-color: white;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="portfolio.html">PORTFOLIO</a></li>
+        <li><a href="services.html">SERVICES</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+    <div class="banner">
+      <h1>Banner Text</h1>
+      <a href="contact.html" class="btn">Contact Us</a>
+    </div>
+  </header>
+</body>
+</html>

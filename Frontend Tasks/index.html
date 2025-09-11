@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Management - Spring Flowers School</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      height: 50px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    nav ul li a:hover {
+      text-decoration: underline;
+    }
+
+    .welcome-section {
+      text-align: center;
+      padding: 80px 20px 40px;
+      background-color: #ffffff;
+    }
+
+    .welcome-section h1 {
+      font-size: 36px;
+      color: #003366;
+      margin-bottom: 15px;
+    }
+
+    .welcome-section p {
+      font-size: 20px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+
+    .profile-button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background-color: #003366;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+
+    .profile-button:hover {
+      background-color: #0055aa;
+    }
+
+    .profile-section {
+      display: none;
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 30px;
+      background-color: #e6f2ff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .profile-section h2 {
+      color: #003366;
+      margin-bottom: 20px;
+    }
+
+    .profile-section p {
+      font-size: 16px;
+      margin: 10px 0;
+    }
+
+    .profile-section:target{
+      display:block;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 12px;
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <header>
+    <img src="https://cdn-az.allevents.in/events7/banners/ceedb57d29b9fce28dfc5e1503cd3c0ecdca53168a64e53dc5ea70be7b11dd09-rimg-w1200-h492-dc0e088c-gmir.png?v=1733263277" alt="School Logo" class="logo">
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#profile">Student Profile</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  
+  <section class="welcome-section">
+    <h1>Welcome to Spring Flowers School</h1>
+    <p>Empowering Students through Digital Learning</p>
+    <a href="#profile" class="profile-button">Student Profile</a>
+  </section>
+
+  
+  <section class="profile-section" id="profile">
+  <h2>Student Profile</h2>
+  <div style="display: flex; align-items: flex-start; gap: 20px;">
+    <img src="https://img.freepik.com/premium-vector/young-boy-with-school-uniform_505024-1314.jpg" alt="Student Photo" style="border-radius: 10px; width: 120px; height: 120px; object-fit: cover;">
+    <div>
+      <p><strong>Name:</strong> Rashik Nagarajan</p>
+      <p><strong>Roll Number:</strong> 20CS140</p>
+      <p><strong>Class:</strong> 12th Grade</p>
+      <p><strong>Email:</strong> rashik@example.com</p>
+    </div>
+  </div>
+</section>
+
+
+
+  <footer>
+    &copy; 2025 Spring Flowers School. All rights reserved.
+  </footer>
+
+</body>
+</html>

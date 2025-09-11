@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Single Page Navigation (No JS)</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    header {
+  background-image: url('C://Users//RASHIK//Downloads//istockphoto-517188688-1024x1024.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+
+    nav {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: flex-end;
+      background: rgba(0, 0, 0, 0.4);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    nav ul li a:hover {
+      color: #00ffff;
+    }
+
+    .banner h1 {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 12px 30px;
+      border: 2px solid white;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background-color: white;
+      color: black;
+    }
+
+    /* Other sections background color */
+    #about, #portfolio, #services, #contact {
+      background: #222;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <ul>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#portfolio">PORTFOLIO</a></li>
+      <li><a href="#services">SERVICES</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <!-- Home Section -->
+  <section id="home" class="banner" style="background-image: url('https://images.unsplash.com/photo-1604020884045-300d20f6a9d3?auto=format&fit=crop&w=1470&q=80'); background-size: cover;">
+    <h1>Banner Text</h1>
+    <a href="#contact" class="btn">Contact Us</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <h2>This is the About Page</h2>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio">
+    <h2>This is the Portfolio Page</h2>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services">
+    <h2>This is the Services Page</h2>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>This is the Contact Page</h2>
+  </section>
+
+</body>
+</html>

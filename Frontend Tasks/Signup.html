@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Signup Page</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #ff4081, #7c4dff);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .signup-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      width: 400px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: #7c4dff;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #7c4dff;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .login-link {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .login-link a {
+      color: #7c4dff;
+      text-decoration: none;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="signup-box">
+    <h2>Sign Up</h2>
+    <form>
+      <input type="text" placeholder="First Name" required>
+      <input type="text" placeholder="Last Name" required>
+      <input type="email" placeholder="Email" required>
+      <input type="date" placeholder="Birth Date" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <input type="password" placeholder="Password" required>
+      <input type="password" placeholder="Confirm Password" required>
+      <button type="submit">Sign Up</button>
+    </form>
+    <div class="login-link">
+      Already have an account? <a href="login.html">Log In</a>
+    </div>
+  </div>
+
+</body>
+</html>

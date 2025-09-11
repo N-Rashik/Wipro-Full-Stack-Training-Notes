@@ -1,0 +1,25 @@
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+header {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+input, select, button {
+  margin: 5px 0;
+  padding: 5px;
+  font-size: 16px;
+}
+
+ul {
+  margin-left: 20px;
+}
