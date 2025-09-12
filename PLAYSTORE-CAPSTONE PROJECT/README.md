@@ -64,9 +64,9 @@ The project follows a **Microservices Architecture** with the following services
 
 playstore-project/
 │
-├── user-service/ # Handles user-related operations
-├── owner-service/ # Handles owner-related operations
-├── eureka-server/ # Service discovery
+├── user-service/       # Handles user-related operations
+├── owner-service/      # Handles owner-related operations
+├── eureka-server/      # Service discovery
 
 ---
 
@@ -77,30 +77,30 @@ playstore-project/
    cd playstore-project
 2. Start **Eureka Server → Owner Service → User Service (in that order).**
 3. Access application at:
-   -**User Service** → http://localhost:8081
-   -**Owner Service** → http://localhost:8082
-   -**Eureka Dashboard** → http://localhost:8761
+   - **User Service** → http://localhost:8081
+   - **Owner Service** → http://localhost:8082
+   - **Eureka Dashboard** → http://localhost:8761
 
 ---
 
 # 📌 Annotations Used
 
--**@RestController** → Create REST APIs
--**@Service** → Service layer
--**@Repository** → Database access layer
--**@Entity** → Map Java class to DB table
--**@Autowired** → Dependency injection
--**@RequestMapping, @GetMapping, @PostMapping** → API endpoints
--**@DiscriminatorValue** → Inheritance mapping in JPA
--**@ExceptionHandler** → Handle specific exceptions
--**@ControllerAdvice** → Global exception handling
+- **@RestController** → Create REST APIs
+- **@Service** → Service layer
+- **@Repository** → Database access layer
+- **@Entity** → Map Java class to DB table
+- **@Autowired** → Dependency injection
+- **@RequestMapping, @GetMapping, @PostMapping** → API endpoints
+- **@DiscriminatorValue** → Inheritance mapping in JPA
+- **@ExceptionHandler** → Handle specific exceptions
+- **@ControllerAdvice** → Global exception handling
 
 ---
 
 ## 📊 Future Enhancements
 
--Implement Notification Service (real-time alerts)
--Add Payment Gateway for premium apps
+- Implement Notification Service (real-time alerts)
+- Add Payment Gateway for premium apps
 
 ---
 
