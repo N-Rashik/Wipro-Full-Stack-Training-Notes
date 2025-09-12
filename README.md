@@ -88,11 +88,15 @@ Quick references created during training:
 ---
 
 ## 🛠️ Tech Stack
-- **Languages:** Java, SQL, JavaScript  
+- **Languages:** Java, SQL, JavaScript
 - **Frontend:** HTML, CSS, jQuery  
-- **Backend:** Spring Framework, Spring Boot, Microservices, Hibernate  
-- **Database:** MySQL  
-- **Version Control:** Git & GitHub  
+- **Backend:** Spring Framework, Spring MVC, Spring Boot, Microservices, Hibernate, JPA, Spring Security, Spring Cloud, WebFlux  
+- **Database:** MySQL, H2 Database  
+- **DevOps Tools:** Git, GitHub, Maven, Jenkins, SonarQube  
+- **Containerization & Orchestration:** Docker, Docker Compose, Kubernetes (K8s), KEDA  
+- **Cloud & Deployment:** SaaS, PaaS, IaaS, FaaS 
+- **APIs & Documentation:** RESTful APIs, Swagger, Postman  
+- **Monitoring & Resilience:** Resilience4J, Prometheus, Sleuth, Zipkin  
 
 ---
 
