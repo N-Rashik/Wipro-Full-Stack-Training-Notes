@@ -62,11 +62,14 @@ The project follows a **Microservices Architecture** with the following services
 
 ## 📂 Project Structure
 
+```plaintext
 playstore-project/
 │
 ├── user-service/       # Handles user-related operations
 ├── owner-service/      # Handles owner-related operations
 ├── eureka-server/      # Service discovery
+
+```
 
 ---
 
