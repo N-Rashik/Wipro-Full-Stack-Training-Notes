@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+
+    <!-- Bootstrap & jQuery -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+        /* Page & Navbar */
+        body { 
+            background: #F3E8FF; /* very light purple as page background */
+            font-family: 'Segoe UI', sans-serif; 
+        }
+        .navbar { 
+            border-radius: 0 0 20px 20px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+            background: #9B59B6; /* deeper purple for navbar */
+        }
+        .navbar-brand { font-weight: bold; font-size: 1.5rem; color: #fff; }
+        .badge { animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.2); } 100% { transform: scale(1); } }
+
+        h2 { font-weight: bold; color: #6A1B9A; }
+
+        /* App Card */
+        .app-card {
+            border-radius: 20px;
+            background: #D8BFD8;  /* Thistle color */
+            color: #4A148C;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+        }
+        .app-card:hover {
+            transform: translateY(-10px) rotate(-1deg);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+            background: #E6CCF2; /* slightly lighter thistle hover */
+        }
+
+        /* Placeholder icon with bright star */
+        .icon-placeholder {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 20px auto;
+            background: linear-gradient(135deg, #D8BFD8, #C1A3C1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #fff;
+            position: relative;
+            animation: float 3s ease-in-out infinite;
+        }
+        .icon-placeholder::after {
+            content: "★";
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            font-size: 1.4rem;
+            color: #FFD700; /* bright gold star */
+            text-shadow: 0 0 10px #FFD700, 0 0 15px #FFE066;
+            animation: twinkle 1.5s infinite alternate;
+        }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        @keyframes twinkle { 0% { opacity: 0.3; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.3); } 100% { opacity: 0.3; transform: scale(0.8); } }
+
+        /* Card body */
+        .card-body { animation: fadeIn 1s ease-in-out; text-align: center; }
+        @keyframes fadeIn { from { opacity:0; transform:translateY(15px); } to { opacity:1; transform:translateY(0); } }
+
+        /* Hover effects for text */
+        .app-card:hover .card-title { color: #4A148C; transform: scale(1.08); transition: 0.3s; }
+        .app-card:hover .card-text { color: #6A1B9A; transition: 0.3s; }
+
+        /* Comment card */
+        .comment-card {
+            margin-bottom: 10px;
+            padding: 10px;
+            background-color: #F3E8FF;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        /* Rating stars */
+        #starRating .star { font-size: 1.8rem; cursor: pointer; color: #E1BEE7; transition: color 0.2s; }
+        #starRating .star.active { color: #FFD700; text-shadow: 0 0 10px #FFD700, 0 0 20px #FFE066; }
+
+        /* Card footer buttons */
+        .card-footer .btn { transition: transform 0.2s; }
+        .card-footer .btn:hover { transform: scale(1.05); }
+
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg px-5 py-3">
+    <a class="navbar-brand" href="#">PlayStore User</a>
+    <div class="ms-auto d-flex">
+        <a th:href="@{/user/notifications}" class="btn btn-warning me-2 position-relative">
+            Notifications
+            <span class="badge bg-danger position-absolute top-0 start-100 translate-middle" th:text="${notificationCount}">0</span>
+        </a>
+        <a th:href="@{/logout}" class="btn btn-danger">Logout</a>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Available Apps</h2>
+    </div>
+
+    <div class="mb-4">
+        <form method="get" th:action="@{/user/dashboard}" class="d-flex">
+            <input type="text" name="search" class="form-control me-2" placeholder="Search apps..." th:value="${search}">
+            <button type="submit" class="btn btn-primary">🔍 Search</button>
+        </form>
+    </div>
+
+    <!-- Apps Grid -->
+    <div class="row g-4">
+        <div class="col-md-4 mb-4" th:each="app : ${apps}">
+            <div class="card app-card h-100 animate__animated animate__fadeInUp position-relative">
+                <div class="icon-placeholder" th:text="${app.name.substring(0,1)}"></div>
+                <div class="card-body">
+                    <h5 class="card-title" th:text="${app.name}"></h5>
+                    <p class="card-text" th:text="${app.description}"></p>
+                    <p class="card-text">
+                        <b>Category:</b> <span th:text="${app.category}"></span><br>
+                        <b>Version:</b> <span th:text="${app.version}"></span><br>
+                        
+                    </p>
+                </div>
+                <div class="card-footer d-flex flex-wrap justify-content-between">
+                    <a th:href="@{'/user/app/download/' + ${app.id}}" class="btn btn-success btn-sm">⬇️ Download</a>
+                    <button class="btn btn-info btn-sm" th:onclick="'openFeedbackModal(' + ${app.id} + ')'">💬 Feedback</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Feedback Modal -->
+<div class="modal fade" id="feedbackModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content animate__animated animate__fadeInDown">
+            <div class="modal-header">
+                <h5 class="modal-title">Rate & Comment</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label><b>Your Rating:</b></label>
+                    <div id="starRating">
+                        <span data-value="1" class="star">★</span>
+                        <span data-value="2" class="star">★</span>
+                        <span data-value="3" class="star">★</span>
+                        <span data-value="4" class="star">★</span>
+                        <span data-value="5" class="star">★</span>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label><b>Your Comment:</b></label>
+                    <textarea id="feedbackComment" class="form-control" rows="3" placeholder="Write a comment..."></textarea>
+                </div>
+                <div>
+                    <h6>Comments:</h6>
+                    <div id="existingComments" class="mt-2"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="submitFeedback()">Submit</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+let currentAppId = 0;
+let currentRating = 0;
+
+function openFeedbackModal(appId) {
+    currentAppId = appId;
+    currentRating = 0;
+    $('#feedbackComment').val('');
+    $('#starRating .star').removeClass('active');
+
+    $('#starRating .star').off('click').on('click', function() {
+        currentRating = $(this).data('value');
+        updateStars(currentRating);
+    });
+
+    fetch('/api/comments/app/' + appId)
+        .then(res => res.json())
+        .then(data => {
+            let html = '';
+            if(data.length === 0) html = '<p class="text-muted">No comments yet.</p>';
+            else data.forEach(c => {
+                html += `<div class="comment-card"><b>${c.userName}</b>: ${c.message}</div>`;
+            });
+            $('#existingComments').html(html);
+        })
+        .catch(err => console.error(err));
+
+    $('#feedbackModal').modal('show');
+}
+
+function updateStars(rating) {
+    $('#starRating .star').each(function() {
+        const value = $(this).data('value');
+        $(this).toggleClass('active', value <= rating);
+    });
+}
+
+function submitFeedback() {
+    const comment = $('#feedbackComment').val().trim();
+    if(currentRating === 0 && comment === "") {
+        alert("Please provide a rating or comment!");
+        return;
+    }
+
+    fetch('/user/app/' + currentAppId + '/comment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: comment }),
+        credentials: 'same-origin'
+    })
+    .then(res => res.text())
+    .then(data => {
+        if(data.trim() === "SUCCESS") {
+            if(currentRating > 0) {
+                fetch('/user/app/' + currentAppId + '/rate?stars=' + currentRating, { 
+                    method: 'POST',
+                    credentials: 'same-origin'
+                }).catch(err => console.error(err));
+            }
+
+            fetch('/api/comments/app/' + currentAppId)
+            .then(res => res.json())
+            .then(data => {
+                let html = '';
+                if(data.length === 0) html = '<p class="text-muted">No comments yet.</p>';
+                else data.forEach(c => {
+                    html += `<div class="comment-card"><b>${c.userName}</b>: ${c.message}</div>`;
+                });
+                $('#existingComments').html(html);
+            });
+        } else {
+            alert("Failed to submit comment.");
+        }
+    })
+    .catch(err => { console.error(err); alert("Error submitting feedback."); });
+}
+</script>
+<!-- Add this at the end, just before </body> -->
+<footer class="footer mt-5 py-3 animate__animated animate__fadeInUp">
+    <div class="container text-center">
+        <span class="text-muted">&copy; 2025 PlayStore User. All Rights Reserved.</span>
+    </div>
+</footer>
+
+<style>
+    .footer {
+        background: #D8BFD8; /* Thistle color */
+        color: #4A148C;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        position: relative;
+        width: 100%;
+        border-radius: 20px 20px 0 0;
+    }
+    .footer span { font-weight: 500; }
+</style>
+
+</body>
+</html>
