@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App Comments</title>
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        body { background-color: #eef2f5; font-family: 'Arial', sans-serif; }
+        .card {
+            margin-top: 40px;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            animation: slideDown 0.8s ease-in-out;
+        }
+        @keyframes slideDown {
+            0% { opacity: 0; transform: translateY(-20px);}
+            100% { opacity: 1; transform: translateY(0);}
+        }
+        .comment-card {
+            margin-bottom: 15px;
+            border-radius: 15px;
+            padding: 15px;
+            background-color: #ffffff;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+            transition: transform 0.2s;
+        }
+        .comment-card:hover { transform: scale(1.02); }
+        .user-name { font-weight: bold; color: #0d6efd; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="card">
+        <h3 th:text="'Comments for ' + ${app.name}" class="mb-4"></h3>
+
+        <div th:if="${#lists.isEmpty(comments)}" class="alert alert-info">
+            No comments yet!
+        </div>
+
+        <div th:each="comment : ${comments}" class="comment-card" th:if="${!#lists.isEmpty(comments)}">
+            <p class="user-name" th:text="${comment.userName}">User Name</p>
+            <p th:text="${comment.message}">Comment message</p>
+        </div>
+
+        <a th:href="@{/owner/dashboard}" class="btn btn-secondary mt-3">Back to Dashboard</a>
+    </div>
+</div>
+</body>
+</html>
