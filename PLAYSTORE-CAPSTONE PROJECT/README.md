@@ -73,6 +73,22 @@ playstore-project/
 
 ---
 
+##📸Screenshots
+
+**🖥️ Admin Dashboard**
+
+<img width="1364" height="675" alt="image" src="https://github.com/user-attachments/assets/a55305d0-177c-4afd-b987-5963e00c049e" />
+
+**👤 User Dashboard**
+
+<img width="1361" height="672" alt="image" src="https://github.com/user-attachments/assets/72e4d76a-8279-4fde-a6ec-790ce6cb6a11" />
+
+**👤 User Feedback submission**
+
+<img width="1355" height="686" alt="image" src="https://github.com/user-attachments/assets/22132400-18db-4ae4-b012-7ea6dc0345b3" />
+
+---
+
 ## 🚀 How to Run
 1. Clone the repository:
    ```bash
