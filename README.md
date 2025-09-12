@@ -1,4 +1,4 @@
-# 📚 Wipro Training & Projects Repository
+# 📚 Wipro Full Stack Training Program
 
 This repository contains all my **training notes, assignments, and projects** completed during my Wipro training program.  
 It includes **Core Java programs, frontend tasks, Spring frameworks, microservices, Hibernate, SQL, and Capstone Projects**.  
